@@ -3,7 +3,6 @@ library(ggplot2)
 
 flights <- tbl_df(read.csv("flights.csv",
                            stringsAsFactors = FALSE))
-flights$date <- as.Date(flights$date)
 
 # Speed in mph
 flights <- mutate(flights, speed = dist / (time / 60))
