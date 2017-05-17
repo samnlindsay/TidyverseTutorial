@@ -1,6 +1,10 @@
 library(dplyr)
 library(ggplot2)
 
+flights <- tbl_df(read.csv("flights.csv",
+                           stringsAsFactors = FALSE))
+flights$date <- as.Date(flights$date)
+
 # Different ways to select the arr_delay and dep_delay columns
 select(flights, arr_delay, dep_delay)
 select(flights, arr_delay:dep_delay)
